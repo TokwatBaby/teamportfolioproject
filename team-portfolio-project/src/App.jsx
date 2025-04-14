@@ -3,6 +3,7 @@ import TeamIntro from './components/TeamIntro.Jsx'
 import TeamMission from './components/TeamMission.Jsx'
 import TeamVision from './components/TeamVision.Jsx'
 import AboutUs from './components/AboutUs.Jsx'
+import Expertise from './components/Expertise'
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
     <TeamMission/>
     <TeamVision/>
     <AboutUs/>
+    <Expertise/>
     </>
   )
 }
