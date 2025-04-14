@@ -14,15 +14,14 @@ function TeamVision(){
             <div className="border-l-[3px] w-290 bg-gradient-to-b from-cyan-400 to-purple-600 border-transparent bg-clip-border">
                 <div className="pl-6">
                     <div className="flex items-center">
-                        <h2 className="text-white text-xl font-bold pr-2">Vision</h2><RiLightbulbFill className="text-blue-400 text-4xl"/>
+                        <h2 className="text-white text-2xl font-bold pr-2">Vision</h2><RiLightbulbFill className="text-blue-400 text-4xl"/>
                     </div>
                     <p className="text-white text-sm">To be a leading web development team recognized for delivering cutting-edge,
-                         high-performance web solutions that empower businesses and individuals worldwide. We strive to shape the
-                          digital landscape with innovation, collaboration, and excellence in web development.</p>
+                        high-performance web solutions that empower businesses and individuals worldwide. We strive to shape the
+                        digital landscape with innovation, collaboration, and excellence in web development.</p>
                 </div>
             </div>
         </motion.div>
-        
     );
     
 }

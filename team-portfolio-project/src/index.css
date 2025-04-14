@@ -23,3 +23,19 @@
   -webkit-text-fill-color: transparent;
 }
 
+.aboutus{
+  margin-top: 100px;
+  align-items: center;
+}
+
+.teamBgDiv{
+  margin-bottom: 12px;
+}
+
+.teamBgText{
+  margin-left: 20px;
+}
+
+.groupPicture{
+  width: 500px;
+}

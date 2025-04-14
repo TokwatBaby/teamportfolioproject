@@ -1,7 +1,8 @@
-import WelcomePage from './WelcomePage.Jsx'
-import TeamIntro from './TeamIntro.Jsx'
-import TeamMission from './TeamMission.Jsx'
-import TeamVision from './TeamVision.Jsx'
+import WelcomePage from './components/WelcomePage.Jsx'
+import TeamIntro from './components/TeamIntro.Jsx'
+import TeamMission from './components/TeamMission.Jsx'
+import TeamVision from './components/TeamVision.Jsx'
+import AboutUs from './components/AboutUs.Jsx'
 
 function App() {
 
@@ -11,6 +12,7 @@ function App() {
     <TeamIntro/>
     <TeamMission/>
     <TeamVision/>
+    <AboutUs/>
     </>
   )
 }

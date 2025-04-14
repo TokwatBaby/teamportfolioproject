@@ -13,7 +13,7 @@ function TeamIntro() {
       <div className="border-l-[3px] w-290 bg-gradient-to-b from-cyan-400 to-purple-600 border-transparent bg-clip-border">
         <div className="pl-6">
           <div className="flex items-center">
-            <h2 className="text-white text-xl font-bold pr-2">
+            <h2 className="text-white text-2xl font-bold pr-2">
               Team Introduction
             </h2>
             <IoPeopleCircle className="text-blue-400 text-4xl" />
