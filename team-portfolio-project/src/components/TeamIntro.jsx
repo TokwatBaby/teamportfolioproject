@@ -4,13 +4,13 @@ import { motion } from "framer-motion";
 function TeamIntro() {
   return (
     <motion.div
-        initial={{ opacity: 0, x: -100 }}      
-        whileInView={{ opacity: 1, x: 0 }}      
-        transition={{ duration: 1 }}
-        viewport={{ once: false, amount: 0.4 }}
-      className="px-20 pt-10"
+      initial={{ opacity: 0, x: -100 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 1 }}
+      viewport={{ once: false, amount: 0.4 }}
+      className="px-4 sm:px-8 md:px-16 lg:px-20 pt-10"
     >
-      <div className="border-l-[3px] w-290 bg-gradient-to-b from-cyan-400 to-purple-600 border-transparent bg-clip-border">
+      <div className="border-l-[3px] w-290  w-full sm:max-w-1xl bg-gradient-to-b from-cyan-400 to-purple-600 border-transparent bg-clip-border">
         <div className="pl-6">
           <div className="flex items-center">
             <h2 className="text-white text-2xl font-bold pr-2">
