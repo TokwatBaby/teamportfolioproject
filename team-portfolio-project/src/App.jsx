@@ -4,7 +4,8 @@ import TeamMission from './components/TeamMission.Jsx'
 import TeamVision from './components/TeamVision.Jsx'
 import AboutUs from './components/AboutUs.Jsx'
 import Expertise from './components/Expertise'
-import Gettoknow from './Gettoknow'
+import Gettoknow from './components/Gettoknow'
+import Contacts from './components/Contacts'
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
     <AboutUs/>
     <Expertise/>
     <Gettoknow/>
+    <Contacts/>
     </>
   )
 }

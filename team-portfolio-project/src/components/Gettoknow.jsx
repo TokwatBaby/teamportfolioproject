@@ -14,7 +14,6 @@ function Gettoknow() {
                     GET TO KNOW US
                 </p>
 
-                
             </div>
         </div >
     );
