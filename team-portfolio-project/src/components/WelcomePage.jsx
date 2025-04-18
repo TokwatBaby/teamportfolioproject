@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 function WelcomePage() {
   return (
-    <div className="relative flex justify-center items-center min-h-screen px-4 bg-black">
+    <div className="relative flex justify-center items-center min-h-screen px-4 bg-[linear-gradient(to_bottom,_#0D0D0D,_#1E1E1E)]">
       {/* Corner borders */}
       <div className="absolute top-15 left-15 w-16 h-16 border-t-2 border-l-2 border-gray-600 rounded-tl-lg"></div>
       <div className="absolute top-15 right-15 w-16 h-16 border-t-2 border-r-2 border-gray-600 rounded-tr-lg"></div>
@@ -15,7 +15,8 @@ function WelcomePage() {
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="mt-8 text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-center font-inter font-bold gradient-text1"
+          className="mt-8 sm:text-5xl md:text-6xl lg:text-7xl text-transparent text-5xl font-bold bg-clip-text 
+          bg-gradient-to-r from-[#00FFFF] to-[#8A2BE2] inline-block"
         >
           Welcome to
         </motion.p>
@@ -63,7 +64,8 @@ function WelcomePage() {
           transition={{ duration: 0.8, delay: 1 }}
           className="flex flex-col items-center mt-4 sm:mt-8"
         >
-          <p className="text-lg sm:text-xl md:text-2xl font-inter font-semibold text-white gradient-text2">
+          <p className="text-lg sm:text-xl md:text-2xl text-transparent text-5xl font-bold bg-clip-text 
+                                bg-gradient-to-r from-[#00FFFF] to-[#8A2BE2] inline-block">
             A team composed of web developers
           </p>
           <div className="w-64 sm:w-120 h-px mt-4 bg-gradient-to-r from-white to-gray-400 rounded-full"></div>

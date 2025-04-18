@@ -8,9 +8,9 @@ function TeamMission() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
             viewport={{ once: false, amount: 0.4 }}
-            className="px-4 sm:px-8 md:px-16 lg:px-20 pt-10"
+            className="px-4 sm:px-8 md:px-16 lg:px-20 pt-10 bg-[linear-gradient(to_bottom,_#0D0D0D,_#1E1E1E)]"
         >
-            <div className="border-l-[3px] w-full sm:max-w-1xl bg-gradient-to-b from-cyan-400 to-purple-600 border-transparent bg-clip-border">
+            <div className="border-l-[3px] w-full sm:max-w-1xl border-transparent bg-clip-border">
                 <div className="pl-4 sm:pl-6">
                     <div className="flex flex-wrap items-center gap-2">
                         <h2 className="text-white text-2xl font-bold pr-2">Mission</h2>

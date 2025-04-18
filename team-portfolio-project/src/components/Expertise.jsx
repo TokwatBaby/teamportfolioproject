@@ -1,11 +1,11 @@
 function Expertise() {
     return (
-        <div>
-            <p className="expertise text-center text-white text-4xl font-bold">
+        <div className="bg-[linear-gradient(to_bottom,_#0D0D0D,_#1E1E1E)]"> 
+            <p className="text-center text-white text-4xl font-bold translate-y-10 ">
                 Expertise and Focus area
             </p>
             <div className="border border-1 bg-gradient-to-r from-[#00FFFF] to-[#8A2BE2] rounded-lg p-1">
-                <div className="frontend font-bold text-4xl text-white bg-white rounded-lg p-10">
+                <div className="frontend font-bold text-4xl text-white bg-[linear-gradient(to_bottom,_#0D0D0D,_#1E1E1E)] rounded-lg p-20">
                     Front-end Development
                     <p className="description text-white text-sm">
                         Our Front-end development focuses on creating the visual and interactive
@@ -67,7 +67,7 @@ function Expertise() {
                 </div>
             </div>
             <div className="border border-1 bg-gradient-to-r from-[#00FFFF] to-[#8A2BE2] rounded-lg p-1">
-                <div className="frontend font-bold text-4xl text-white bg-white rounded-lg p-10">
+                <div className="frontend font-bold text-4xl text-white bg-[linear-gradient(to_bottom,_#0D0D0D,_#1E1E1E)] rounded-lg p-10">
                     Back-end Development
                     <p className="description text-white text-sm">
                         Our Back-end development focuses on handling the transaction between the system and the user ensuring a smooth data processing,
@@ -107,7 +107,7 @@ function Expertise() {
                 </div>
             </div>
             <div className="border border-1 bg-gradient-to-r from-[#00FFFF] to-[#8A2BE2] rounded-lg p-1">
-                <div className="frontend font-bold text-4xl text-white bg-white rounded-lg p-10">
+                <div className="frontend font-bold text-4xl text-white bg-[linear-gradient(to_bottom,_#0D0D0D,_#1E1E1E)] rounded-lg p-10">
                     Database Management
                     <p className="description text-white text-sm">
                         Our Database Management involves designing, maintaining, and optimizing data storage systems to ensure seamless data access and security, It includes working with relational database like MySQL. Our team ensures data integrity, performance optimization, and efficient handling of user.
