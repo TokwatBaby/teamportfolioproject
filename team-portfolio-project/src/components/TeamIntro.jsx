@@ -26,6 +26,7 @@ function TeamIntro() {
             efficiency, we transform ideas into powerful web solutions.
           </p>
         </div>
+        
       </div>
     </motion.div>
   );

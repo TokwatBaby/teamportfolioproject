@@ -78,7 +78,7 @@ function Projects() {
                                 </div>
 
                                 {/* Description */}
-                                <div className="project-description mt-4">
+                                <div className="z-index project-description mt-4">
                                     <strong>
                                         {index === 0 && "Payroll Management System"}
                                         {index === 1 && "Scholarship Management System"}

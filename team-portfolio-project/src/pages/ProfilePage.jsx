@@ -1,20 +1,7 @@
-import {
-    SiHtml5,
-    SiCss3,
-    SiPhp,
-    SiJava,
-    SiReact,
-    SiPython,
-    SiMysql,
-    SiJavascript,
-    SiBootstrap,
-    SiFigma,
-    SiAdobephotoshop,
-    SiCanva
-} from "react-icons/si";
-
+import { FaFacebook, FaInstagram, FaEnvelope, FaGithub, FaBasketballBall, FaTv, FaMusic, FaGamepad } from "react-icons/fa";
+import { SiJavascript, SiPython, SiHtml5, SiCss3, SiFigma, SiAdobephotoshop, SiCanva } from "react-icons/si";
 import profileImg from "../assets/dhanielstix.webp";
-import Nav from "../pages/Nav";
+import Nav from "./Nav";
 
 function Diamond({ text }) {
     return (
@@ -47,7 +34,7 @@ function GradientBullet() {
     );
 }
 
-function Profile() {
+function Profilepage() {
     return (
         <div className="min-h-screen text-white px-10 py-6 space-y-8 relative bg-[linear-gradient(to_bottom,_#0D0D0D,_#1E1E1E)]">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 relative">
@@ -68,7 +55,7 @@ function Profile() {
 
                     {/* Right Gradient Line */}
                     <div
-                        className="absolute right-[-1px] top-0 bottom-30 w-1 rounded-full"
+                        className="absolute right-[-1px] top-0 bottom-0 w-1 rounded-full"
                         style={{ background: "linear-gradient(180deg, #00FFFF, #8A2BE2)" }}
                     ></div>
 
@@ -152,74 +139,31 @@ function Profile() {
                         </div>
                     </div>
                     {/* Skills & UI/UX */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 px-10 py-6">
-                        {/* SKILLS Section */}
-                        <div className="text-center">
-                            <h4 className="text-xl font-bold mb-4 flex items-center justify-center gap-2">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 translate-y-30 translate-x-10 bg-clip-text">
+                        <div >
+                            <h4 className="text-xl font-bold mb-2 flex items-center gap-2 text-center">
                                 <GradientBullet />
                                 SKILLS
                             </h4>
-                            <p className="mb-4 text-gray-300">Experienced in full-stack development using modern tools.</p>
-                            <div className="grid grid-cols-3 gap-4 justify-items-center text-3xl">
-                                <div className="flex flex-col items-center text-orange-600">
-                                    <SiHtml5 />
-                                    <span className="text-sm text-white mt-1">HTML</span>
-                                </div>
-                                <div className="flex flex-col items-center text-blue-500">
-                                    <SiCss3 />
-                                    <span className="text-sm text-white mt-1">CSS</span>
-                                </div>
-                                <div className="flex flex-col items-center text-indigo-600">
-                                    <SiPhp />
-                                    <span className="text-sm text-white mt-1">PHP</span>
-                                </div>
-                                <div className="flex flex-col items-center text-red-600">
-                                    <SiJava />
-                                    <span className="text-sm text-white mt-1">Java</span>
-                                </div>
-                                <div className="flex flex-col items-center text-cyan-500">
-                                    <SiReact />
-                                    <span className="text-sm text-white mt-1">React</span>
-                                </div>
-                                <div className="flex flex-col items-center text-yellow-500">
-                                    <SiPython />
-                                    <span className="text-sm text-white mt-1">Python</span>
-                                </div>
-                                <div className="flex flex-col items-center text-blue-800">
-                                    <SiMysql />
-                                    <span className="text-sm text-white mt-1">MySQL</span>
-                                </div>
-                                <div className="flex flex-col items-center text-yellow-400">
-                                    <SiJavascript />
-                                    <span className="text-sm text-white mt-1">JavaScript</span>
-                                </div>
-                                <div className="flex flex-col items-center text-purple-600">
-                                    <SiBootstrap />
-                                    <span className="text-sm text-white mt-1">Bootstrap</span>
-                                </div>
+                            <p className="mb-2 text-gray-300">Experienced in full-stack development using modern tools.</p>
+                            <div className="flex gap-2 text-3xl">
+                                <SiJavascript />
+                                <SiHtml5 />
+                                <SiCss3 />
+                                <SiPython />
                             </div>
                         </div>
 
-                        {/* UI/UX Design Section */}
-                        <div className="text-center">
-                            <h4 className="text-xl font-bold mb-4 flex items-center justify-center gap-2">
+                        <div className="bg-clip-text">
+                            <h4 className="text-xl font-semibold mb-2 flex items-center gap-2 bg-clip-text">
                                 <GradientBullet />
                                 UI/UX Design
                             </h4>
-                            <p className="mb-4 text-gray-300">Creative design skills with user-centered focus.</p>
-                            <div className="flex justify-center gap-6 text-4xl">
-                                <div className="flex flex-col items-center text-pink-500">
-                                    <SiFigma />
-                                    <span className="text-sm text-white mt-1">Figma</span>
-                                </div>
-                                <div className="flex flex-col items-center text-blue-400">
-                                    <SiAdobephotoshop />
-                                    <span className="text-sm text-white mt-1">Photoshop</span>
-                                </div>
-                                <div className="flex flex-col items-center text-blue-300">
-                                    <SiCanva />
-                                    <span className="text-sm text-white mt-1">Canva</span>
-                                </div>
+                            <p className="mb-2 text-gray-300 bg-clip-text">Creative design skills with user-centered focus.</p>
+                            <div className="flex gap-4 text-3xl bg-clip-text">
+                                <SiFigma lassName="flex gap-4 text-3xl bg-clip-text" />
+                                <SiAdobephotoshop />
+                                <SiCanva />
                             </div>
                         </div>
                     </div>
@@ -229,4 +173,4 @@ function Profile() {
     );
 }
 
-export default Profile;
+export default Profilepage;

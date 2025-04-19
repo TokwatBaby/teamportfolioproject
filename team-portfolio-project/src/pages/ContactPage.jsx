@@ -2,9 +2,9 @@ import facebook from '../assets/facebook.png';
 import linkedin from '../assets/linkedin.png';
 import github from '../assets/github.png';
 import x from '../assets/x.png';
-import Input from '../pages/Input';
+import Input from './Input';
 
-function ContactPage() {
+function Contact () {
 
     return (
 
@@ -75,4 +75,4 @@ function ContactPage() {
 
 }
 
-export default ContactPage
+export default Contact

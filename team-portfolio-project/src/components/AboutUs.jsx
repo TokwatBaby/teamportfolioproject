@@ -3,8 +3,8 @@ import { IdCard, Goal } from "lucide-react";
 
 function AboutUs() {
     return (
-        <div className="aboutus flex flex-col items-center bg-[linear-gradient(to_bottom,_#0D0D0D,_#1E1E1E)]">
-            <div className="relative w-full max-w-6xl mx-auto border-t-4 text-gray-600 min-h-[30rem] flex items-start justify-center pt-20 bg-clip-text px-4">
+        <div className="items-center bg-[linear-gradient(to_bottom,_#0D0D0D,_#1E1E1E)]">
+            <div className="relative w-full max-w-6xl mx-auto min-h-[30rem] flex items-start justify-center pt-20 bg-clip-text px-4">
                 {/* Large faded CAREER text */}
                 <div>
                     <h1 className="absolute top-14 left-1/2 -translate-x-1/2 text-white 

@@ -1,14 +1,9 @@
-import Header from './Header'
-import WelcomePage from './components/WelcomePage.Jsx'
-import TeamIntro from './components/TeamIntro.Jsx'
-import TeamMission from './components/TeamMission.Jsx'
-import TeamVision from './components/TeamVision.Jsx'
-import AboutUs from './components/AboutUs.Jsx'
-import Expertise from './components/Expertise'
-import Footer from './components/Footer'
-import Contact from './components/Contact'
-import Team from './components/Team'
-import Projects from './components/Projects'
+import {Routes,Route} from 'react-router-dom';
+import ProjectPage from './pages/ProjectPage';
+import Header from './components/Header.Jsx';
+import Homepage from './pages/Homepage.Jsx';
+import ProfilePage from './pages/ProfilePage';
+import ContactPage from './components/Contact';
 
 
 function App() {
@@ -16,16 +11,12 @@ function App() {
   return (
     <>
     <Header/>
-    <WelcomePage/>
-    <TeamIntro/>
-    <TeamMission/>
-    <TeamVision/>
-    <AboutUs/>
-    <Expertise/>
-    <Team/>
-    <Projects/>
-    <Contact/>
-    <Footer/>
+    <Routes>
+      <Route path="/Homepage" element={<Homepage />} />
+      <Route path="/ProjectPage" element={<ProjectPage />} />
+      <Route path="/ProfilePage" element={<ProfilePage />} />
+      <Route path="/ContactPage" element={<ContactPage />} />
+    </Routes>
     </>
   )
 }
