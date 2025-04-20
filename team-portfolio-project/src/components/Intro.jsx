@@ -2,6 +2,7 @@ import logo from '../assets/logo.png';
 import group from '../assets/group.png';
 import Principle from './TeamMission';
 import Principle1 from './TeamVision';
+import { motion } from "framer-motion";
 
 
 function Intro() {
@@ -14,34 +15,66 @@ function Intro() {
 
             <section className="relative flex flex-col justify-center p-4 sm:p-6 md:p-8">
 
-                <div className="absolute top-0 left-0 w-24 h-24 border-t border-l
-                         border-gray-600 rounded-tl-2xl"></div>
-                <div className="absolute top-0 right-0 w-24 h-24 border-t border-r
-                         border-gray-600 rounded-tr-2xl"></div>
-                <div className="absolute bottom-0 left-0 w-24 h-24 border-b border-l
-                         border-gray-600 rounded-bl-2xl"></div>
-                <div className="absolute bottom-0 right-0 w-24 h-24 border-b border-r
-                         border-gray-600 rounded-br-2xl"></div>
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    className="absolute top-0 left-0 w-24 h-24 border-t border-l
+                         border-gray-600 rounded-tl-2xl"></motion.div>
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    className="absolute top-0 right-0 w-24 h-24 border-t border-r
+                         border-gray-600 rounded-tr-2xl"></motion.div>
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    className="absolute bottom-0 left-0 w-24 h-24 border-b border-l
+                         border-gray-600 rounded-bl-2xl"></motion.div>
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }} 
+                    className="absolute bottom-0 right-0 w-24 h-24 border-b border-r
+                         border-gray-600 rounded-br-2xl"></motion.div>
 
                 <div className="text-center m-10 sm:m-12 md:m-16 lg:m-20">
                     <div>
-                        <p className='text-transparent text-4xl sm:text-5xl md:text-6xl font-extrabold bg-clip-text 
+                        <motion.p
+                            initial={{ opacity: 0, y: -30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, ease: "easeOut" }}
+                            className='text-transparent text-4xl sm:text-5xl md:text-6xl font-extrabold bg-clip-text 
                                 bg-gradient-to-r from-[#00FFFF] to-[#8A2BE2] inline-block'>
                             Welcome to
-                        </p>
+                        </motion.p>
                     </div>
-                    <div className='flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 mt-6'>
+                    <motion.div
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.8, delay: 0.4 }}
+                            className='flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 mt-6'>
                         <a href="#">
                             <img src={logo} alt="logo" className='w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40' />
                         </a>
-                        <h1 className='text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold'>DevNexus</h1>
-                    </div>
+                        <motion.h1
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 0.8, delay: 0.6 }} 
+                                className='text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold'>DevNexus</motion.h1>
+                    </motion.div>
                     <div>
-                        <p className='text-transparent text-xl sm:text-2xl font-extrabold bg-clip-text 
+                        <motion.p
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.6  }} 
+                            className='text-transparent text-xl sm:text-2xl font-extrabold bg-clip-text 
                                 bg-gradient-to-r from-[#00FFFF] to-[#8A2BE2]
                                 inline-block border-b-2 border-gray-600 mt-20 sm:mt-32'>
                             A team composed of web developers
-                        </p>
+                        </motion.p>
                     </div>
                 </div>
 

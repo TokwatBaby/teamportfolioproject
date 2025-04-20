@@ -1,7 +1,7 @@
 import { FaFacebook, FaInstagram, FaEnvelope, FaGithub, FaBasketballBall, FaTv, FaMusic, FaGamepad } from "react-icons/fa";
 import { SiJavascript, SiPython, SiHtml5, SiCss3, SiFigma, SiAdobephotoshop, SiCanva } from "react-icons/si";
 import profileImg from "../assets/dhanielstix.webp";
-import Nav from "./Nav";
+import Nav from "../components/Nav";
 
 function Diamond({ text }) {
     return (
