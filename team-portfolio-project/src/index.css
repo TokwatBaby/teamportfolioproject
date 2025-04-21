@@ -4,6 +4,7 @@
 body{
   margin: 0%;
   padding: 0%;
+  overflow-x: hidden;
 }
 
 @keyframes slide-gradient {
@@ -223,3 +224,51 @@ body{
 .project-container {
   margin-left: 60px;
 }
+
+.animated-corner {
+  position: absolute;
+  background: linear-gradient(90deg, #00ffff, #8a2be2, #00ffff);
+  background-size: 400%;
+  animation: moveGradient 6s linear infinite, moveCorner 4s ease-in-out infinite;
+}
+
+@keyframes moveGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes moveCorner {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  50% {
+    transform: translate(5px, 5px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+.animated-border {
+  background: linear-gradient(180deg, #00ffff, #8a2be2, #00ffff);
+  background-size: 200% 200%;
+  animation: gradientFlow 2s ease infinite;
+}
+
+
