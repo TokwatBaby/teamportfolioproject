@@ -97,9 +97,9 @@ function Intro() {
 
                 <div className="text-center m-10 sm:m-12 md:m-16 lg:m-20">
                     <motion.p
-                        initial={{ opacity: 0, y: -30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+                        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                        transition={{ duration: 0.5, ease: "easeOut", delay: 0.5 }}
                         className='text-transparent text-4xl sm:text-5xl md:text-6xl font-extrabold bg-clip-text 
                             bg-gradient-to-r from-[#00FFFF] to-[#8A2BE2] inline-block'>
                         Welcome to
@@ -108,9 +108,9 @@ function Intro() {
                     <motion.div
                         ref={containerRef}
                         style={{ x: springX, y: springY }}
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.8, delay: 0.4 }}
+                        initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+                        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                        transition={{ duration: 0.5, ease: "easeOut",delay : 0.7 }}
                         className='flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 mt-6'>
                         <motion.img
                             src={logo}
@@ -120,9 +120,9 @@ function Intro() {
                             transition={{ type: "spring", stiffness: 300 }}
                         />
                         <motion.h1
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 0.8, delay: 0.6 }}
+                            initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+                            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                            transition={{ duration: 0.5, ease: "easeOut" , delay : 0.9}}
                             whileHover={{ scale: 1.05 }}
                             className='text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold'>
                             DevNexus
@@ -130,9 +130,9 @@ function Intro() {
                     </motion.div>
 
                     <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.8 }}
+                        initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+                        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                        transition={{ duration: 0.5, ease: "easeOut" , delay : 1.2 }}
                         className='text-transparent text-xl sm:text-2xl font-extrabold bg-clip-text 
                             bg-gradient-to-r from-[#00FFFF] to-[#8A2BE2]
                             inline-block border-b-2 border-gray-600 mt-20 sm:mt-32'>
@@ -142,10 +142,7 @@ function Intro() {
             </section>
 
             <section className='relative flex flex-col justify-center p-8'>
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+                <div
                     className='relative flex flex-col p-16 gap-6 items-center 
                         justify-center text-center -mb-25'>
                     <motion.img
@@ -153,19 +150,21 @@ function Intro() {
                         alt="group"
                         className='w-20 h-20'
                         whileHover={{ scale: 1.1, rotate: -2 }}
-                        transition={{ type: 'spring', stiffness: 300 }}
+                        initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+                        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                        transition={{ duration: 0.5, ease: "easeOut" }}
                     />
                     <motion.h1
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
+                        initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+                        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                        transition={{ duration: 0.5, ease: "easeOut", delay: 0.3 }}
                         className='text-white text-4xl font-bold'>
                         Team Introduction
                     </motion.h1>
                     <motion.p
-                        initial={{ opacity: 0, y: 10 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.4 }}
+                        initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+                        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                        transition={{ duration: 0.5, ease: "easeOut" , delay: 0.5}}
                         className='text-white text-base font-medium'>
                         We are a team of passionate and innovative web developers committed to delivering high-quality,
                         scalable, and efficient digital solutions. With a strong foundation in both front-end and back-end
@@ -173,22 +172,20 @@ function Intro() {
                         applications tailored to meet the unique needs of our clients. Our team thrives on collaboration,
                         continuous learning, and problem-solving...
                     </motion.p>
-                </motion.div>
+                </div>
 
                 <div className="relative flex flex-col xl:flex-row justify-center items-center p-16 gap-16 text-base xl:text-lg">
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                        className="transform scale-110"
+                        initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+                        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                        transition={{ duration: 0.5, ease: "easeOut", delay : 0.5}}
                     >
                         <Principle />
                     </motion.div>
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
-                        className="transform scale-110"
+                        initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+                        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                        transition={{ duration: 0.5, ease: "easeOut", delay : 0.5}}
                     >
                         <Principle1 />
                     </motion.div>

@@ -1,20 +1,38 @@
+import { motion } from "framer-motion";
+
 function Expertise() {
     return (
         <div className="bg-[linear-gradient(to_bottom,_#0D0D0D,_#1E1E1E)]"> 
-            <p className="text-center text-white text-4xl font-bold translate-y-10 ">
+            <motion.p 
+                initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+                whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+                 className="text-center text-white text-4xl font-bold translate-y-10 ">
                 Expertise and Focus area
-            </p>
+            </motion.p>
             <div className="border border-1 bg-gradient-to-r from-[#00FFFF] to-[#8A2BE2] rounded-lg p-1">
                 <div className="frontend font-bold text-4xl text-white bg-[linear-gradient(to_bottom,_#0D0D0D,_#1E1E1E)] rounded-lg p-20">
-                    Front-end Development
-                    <p className="description text-white text-sm">
+                    <motion.p
+                    initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+                    whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                    transition={{ duration: 0.5, ease: "easeOut", delay : 0.2 }}
+                    >Front-end Development</motion.p>
+                    <motion.p
+                        initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+                        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                        transition={{ duration: 0.5, ease: "easeOut", delay : 0.4 }}
+                        className="description text-white text-sm">
                         Our Front-end development focuses on creating the visual and interactive
                         aspects of a website or web application with the use of HTML for structure,
                         CSS for aesthetic design, and JavaScript for the functionality. We also use
                         frameworks like ReactJS and Tailwind CSS to furthermore improve user experience.
-                    </p>
+                    </motion.p>
                     <div className="icon-row mt-6">
-                        <div className="flex flex-col items-center">
+                        <motion.div
+                            initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+                            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                            transition={{ duration: 0.5, ease: "easeOut", delay : 0.6 }}
+                            className="flex flex-col items-center">
                             <div className="icon-circle">
                                 <img
                                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
@@ -22,9 +40,17 @@ function Expertise() {
                                 />
                             </div>
                             <span className="mt-2 text-base font-semibold">HTML</span>
-                        </div>
-                        <div className="divider-line-horizontal"></div>
-                        <div className="flex flex-col items-center">
+                        </motion.div>
+                        <motion.div
+                            initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+                            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                            transition={{ duration: 0.5, ease: "easeOut", delay : 0.7 }}
+                            className="divider-line-horizontal"></motion.div>
+                        <motion.div
+                            initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+                            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                            transition={{ duration: 0.5, ease: "easeOut", delay : 0.8 }}
+                             className="flex flex-col items-center">
                             <div className="icon-circle">
                                 <img
                                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
@@ -32,9 +58,17 @@ function Expertise() {
                                 />
                             </div>
                             <span className="mt-2 text-base font-semibold">CSS</span>
-                        </div>
-                        <div className="divider-line-horizontal"></div>
-                        <div className="flex flex-col items-center">
+                        </motion.div>
+                        <motion.div
+                            initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+                            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                            transition={{ duration: 0.5, ease: "easeOut", delay : 0.9 }}
+                            className="divider-line-horizontal"></motion.div>
+                        <motion.div
+                            initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+                            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                            transition={{ duration: 0.5, ease: "easeOut", delay : 1 }}
+                            className="flex flex-col items-center">
                             <div className="icon-circle">
                                 <img
                                     src="https://img.icons8.com/?size=100&id=4PiNHtUJVbLs&format=png&color=000000"
@@ -42,9 +76,17 @@ function Expertise() {
                                 />
                             </div>
                             <span className="mt-2 text-base font-semibold">Tailwind</span>
-                        </div>
-                        <div className="divider-line-horizontal"></div>
-                        <div className="flex flex-col items-center">
+                        </motion.div>
+                        <motion.div
+                            initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+                            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                            transition={{ duration: 0.5, ease: "easeOut", delay : 1.1 }}
+                            className="divider-line-horizontal"></motion.div>
+                        <motion.div
+                            initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+                            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                            transition={{ duration: 0.5, ease: "easeOut", delay : 1.2 }}
+                            className="flex flex-col items-center">
                             <div className="icon-circle">
                                 <img
                                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
@@ -52,9 +94,17 @@ function Expertise() {
                                 />
                             </div>
                             <span className="mt-2 text-base font-semibold">Javascript</span>
-                        </div>
-                        <div className="divider-line-horizontal"></div>
-                        <div className="flex flex-col items-center">
+                        </motion.div>
+                        <motion.div
+                            initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+                            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                            transition={{ duration: 0.5, ease: "easeOut", delay : 1.3 }}
+                            className="divider-line-horizontal"></motion.div>
+                        <motion.div
+                            initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+                            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                            transition={{ duration: 0.5, ease: "easeOut", delay : 1.4 }}
+                            className="flex flex-col items-center">
                             <div className="icon-circle">
                                 <img
                                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
@@ -62,19 +112,31 @@ function Expertise() {
                                 />
                             </div>
                             <span className="mt-2 text-base font-semibold">React.js</span>
-                        </div>
+                        </motion.div>
                     </div>
                 </div>
             </div>
             <div className="border border-1 bg-gradient-to-r from-[#00FFFF] to-[#8A2BE2] rounded-lg p-1">
                 <div className="frontend font-bold text-4xl text-white bg-[linear-gradient(to_bottom,_#0D0D0D,_#1E1E1E)] rounded-lg p-10">
-                    Back-end Development
-                    <p className="description text-white text-sm">
+                <motion.p
+                    initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+                    whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                    transition={{ duration: 0.5, ease: "easeOut" }}
+                    >Back-end Development</motion.p>
+                    <motion.p 
+                        initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+                        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                        transition={{ duration: 0.5, ease: "easeOut", delay : 0.3 }}
+                        className="description text-white text-sm">
                         Our Back-end development focuses on handling the transaction between the system and the user ensuring a smooth data processing,
                         authentication, and business logic. Creating a robust server-side applications with a focus on security, scalability, and efficiency
-                    </p>
+                    </motion.p>
                     <div className="icon-row mt-6">
-                        <div className="flex flex-col items-center">
+                        <motion.div
+                            initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+                            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                            transition={{ duration: 0.5, ease: "easeOut", delay : 0.4 }} 
+                            className="flex flex-col items-center">
                             <div className="icon-circle">
                                 <img
                                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
@@ -82,9 +144,17 @@ function Expertise() {
                                 />
                             </div>
                             <span className="mt-2 text-base font-semibold">Python</span>
-                        </div>
-                        <div className="divider-line-horizontal"></div>
-                        <div className="flex flex-col items-center">
+                        </motion.div>
+                        <motion.div
+                            initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+                            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                            transition={{ duration: 0.5, ease: "easeOut", delay : 0.5 }}
+                            className="divider-line-horizontal"></motion.div>
+                        <motion.div
+                            initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+                            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                            transition={{ duration: 0.5, ease: "easeOut", delay : 0.6 }} 
+                            className="flex flex-col items-center">
                             <div className="icon-circle">
                                 <img
                                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"
@@ -92,9 +162,17 @@ function Expertise() {
                                 />
                             </div>
                             <span className="mt-2 text-base font-semibold">PHP</span>
-                        </div>
-                        <div className="divider-line-horizontal"></div>
-                        <div className="flex flex-col items-center">
+                        </motion.div>
+                        <motion.div
+                            initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+                            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                            transition={{ duration: 0.5, ease: "easeOut", delay : 0.7 }}
+                            className="divider-line-horizontal"></motion.div>
+                        <motion.div
+                            initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+                            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                            transition={{ duration: 0.5, ease: "easeOut", delay : 0.8 }} 
+                            className="flex flex-col items-center">
                             <div className="icon-circle">
                                 <img
                                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
@@ -102,17 +180,29 @@ function Expertise() {
                                 />
                             </div>
                             <span className="mt-2 text-base font-semibold">Java</span>
-                        </div>
+                        </motion.div>
                     </div>
                 </div>
             </div>
             <div className="border border-1 bg-gradient-to-r from-[#00FFFF] to-[#8A2BE2] rounded-lg p-1">
                 <div className="frontend font-bold text-4xl text-white bg-[linear-gradient(to_bottom,_#0D0D0D,_#1E1E1E)] rounded-lg p-10">
-                    Database Management
-                    <p className="description text-white text-sm">
+                <motion.p
+                    initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+                    whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                    transition={{ duration: 0.5, ease: "easeOut" }}
+                    >Database Management</motion.p>
+                    <motion.p 
+                        initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+                        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                        transition={{ duration: 0.5, ease: "easeOut", delay : 0.3 }}
+                        className="description text-white text-sm">
                         Our Database Management involves designing, maintaining, and optimizing data storage systems to ensure seamless data access and security, It includes working with relational database like MySQL. Our team ensures data integrity, performance optimization, and efficient handling of user.
-                    </p>
-                    <div className="icon-row mt-6">
+                    </motion.p>
+                    <motion.div
+                            initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+                            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                            transition={{ duration: 0.5, ease: "easeOut", delay : 0.5 }} 
+                            className="icon-row mt-6">
                         <div className="flex flex-col items-center">
                             <div className="icon-circle">
                                 <img
@@ -122,7 +212,7 @@ function Expertise() {
                             </div>
                             <span className="mt-2 text-base font-semibold">MySQL</span>
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </div>

@@ -6,9 +6,9 @@ function AboutUs() {
     return (
         <div className="items-center bg-[linear-gradient(to_bottom,_#0D0D0D,_#1E1E1E)]">
             <motion.div
-                initial={{ opacity: 0, y: -30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
+                initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+                whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                transition={{ duration: 0.5, ease: "easeOut", delay : 0.5}}
                 className="relative w-full max-w-6xl mx-auto min-h-[30rem] flex items-start justify-center pt-20 bg-clip-text px-4"
             >
                 <div>
@@ -18,19 +18,23 @@ function AboutUs() {
                     </h1>
                 </div>
 
-                <p className="text-transparent text-5xl font-extrabold bg-clip-text 
+                <motion.p
+                    initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+                    whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                    transition={{ duration: 0.5, ease: "easeOut" , delay : 0.7 }}
+                    className="text-transparent text-5xl font-extrabold bg-clip-text 
                                 bg-gradient-to-r from-[#00FFFF] to-[#8A2BE2] inline-block">
                     ABOUT US
-                </p>
+                </motion.p>
             </motion.div>
 
             {/* Main Content */}
             <div className="relative z-10 flex flex-col md:flex-row justify-center items-center -translate-y-50 px-4 gap-6 bg-clip-text">
                 {/* Group Picture Animation */}
                 <motion.div
-                    initial={{ opacity: 0, x: -100 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    initial={{ opacity: 0, x: -30, filter: "blur(10px)" }}
+                    whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+                    transition={{ duration: 0.5, ease: "easeOut", delay : 1 }}
                     className="flex justify-center md:justify-end mb-6 md:mb-0"
                 >
                     <motion.img
@@ -49,7 +53,7 @@ function AboutUs() {
                 <motion.div
                     initial={{ opacity: 0, x: 100 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+                    transition={{ duration: 0.5, ease: "easeOut", delay: 1.2 }}
                     className="flex flex-col gap-6 w-full md:w-1/2 bg-clip-text"
                 >
                     {/* Team Background */}
