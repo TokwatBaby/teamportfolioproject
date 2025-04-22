@@ -9,13 +9,13 @@ function Footer() {
                 <motion.p 
                 initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
                 whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                transition={{ duration: 0.5, ease: "easeOut", delay : 1.6}}
+                transition={{ duration: 0.5, ease: "easeOut", delay : 0.8}}
                 className="text-white text-lg font-semibold antialiased">
                     &copy; {new Date().getFullYear()} DevNexus.
                     <motion.span 
                     initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
                     whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                    transition={{ duration: 0.5, ease: "easeOut", delay : 1.6}}
+                    transition={{ duration: 0.5, ease: "easeOut", delay : 0.9}}
                     class="text-gray-400"> All rights reserved</motion.span>
                 </motion.p>
             </div>
