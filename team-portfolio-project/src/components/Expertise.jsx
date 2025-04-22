@@ -15,12 +15,12 @@ function Expertise() {
                     <motion.p
                     initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
                     whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                    transition={{ duration: 0.5, ease: "easeOut", delay : 0.2 }}
+                    transition={{ duration: 0.5, ease: "easeOut", delay : 0.1 }}
                     >Front-end Development</motion.p>
                     <motion.p
                         initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
                         whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                        transition={{ duration: 0.5, ease: "easeOut", delay : 0.4 }}
+                        transition={{ duration: 0.5, ease: "easeOut", delay : 0.2 }}
                         className="description text-white text-sm">
                         Our Front-end development focuses on creating the visual and interactive
                         aspects of a website or web application with the use of HTML for structure,
@@ -31,7 +31,7 @@ function Expertise() {
                         <motion.div
                             initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
                             whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                            transition={{ duration: 0.5, ease: "easeOut", delay : 0.6 }}
+                            transition={{ duration: 0.5, ease: "easeOut", delay : 0.3 }}
                             className="flex flex-col items-center">
                             <div className="icon-circle">
                                 <img
@@ -44,16 +44,16 @@ function Expertise() {
                         <motion.div
                             initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
                             whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                            transition={{ duration: 0.5, ease: "easeOut", delay : 0.7 }}
+                            transition={{ duration: 0.5, ease: "easeOut", delay : 0.4 }}
                             className="divider-line-horizontal"></motion.div>
                         <motion.div
                             initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
                             whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                            transition={{ duration: 0.5, ease: "easeOut", delay : 0.8 }}
+                            transition={{ duration: 0.5, ease: "easeOut", delay : 0.5 }}
                              className="flex flex-col items-center">
                             <div className="icon-circle">
                                 <img
-                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" 
                                     alt="CSS Icon"
                                 />
                             </div>
@@ -62,12 +62,12 @@ function Expertise() {
                         <motion.div
                             initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
                             whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                            transition={{ duration: 0.5, ease: "easeOut", delay : 0.9 }}
+                            transition={{ duration: 0.5, ease: "easeOut", delay : 0.5 }}
                             className="divider-line-horizontal"></motion.div>
                         <motion.div
                             initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
                             whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                            transition={{ duration: 0.5, ease: "easeOut", delay : 1 }}
+                            transition={{ duration: 0.5, ease: "easeOut", delay : 0.7 }}
                             className="flex flex-col items-center">
                             <div className="icon-circle">
                                 <img
@@ -80,12 +80,12 @@ function Expertise() {
                         <motion.div
                             initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
                             whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                            transition={{ duration: 0.5, ease: "easeOut", delay : 1.1 }}
+                            transition={{ duration: 0.5, ease: "easeOut", delay : 0.8 }}
                             className="divider-line-horizontal"></motion.div>
                         <motion.div
                             initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
                             whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                            transition={{ duration: 0.5, ease: "easeOut", delay : 1.2 }}
+                            transition={{ duration: 0.5, ease: "easeOut", delay : 0.9 }}
                             className="flex flex-col items-center">
                             <div className="icon-circle">
                                 <img

@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-
+import { useState, useEffect, useRef } from 'react';
+import { motion } from "framer-motion";
 import {
     FaUserFriends,     // Empathize
     FaBullseye,        // Define
@@ -17,11 +17,11 @@ import {
     SiJavascript, SiPython, SiHtml5, SiCss3,
     SiFigma, SiAdobephotoshop, SiCanva, SiMysql
 } from "react-icons/si";
-import profileImg from "../assets/dhanielstix.webp";
-import profileImg1 from "../assets/jaystix.webp";
-import profileImg2 from "../assets/jpstix.webp";
-import profileImg3 from "../assets/nixstix.webp";
-import profileImg4 from "../assets/nice.webp";
+import profileImg from "../assets/dhanielstix.png";
+import profileImg1 from "../assets/jaystix.png";
+import profileImg2 from "../assets/jpstix.png";
+import profileImg3 from "../assets/nixstix.png";
+import profileImg4 from "../assets/nice.png";
 
 
 function GradientBullet() {
@@ -35,7 +35,7 @@ function GradientBullet() {
 
 function Profilepage() {
     const [activeIndex, setActiveIndex] = useState(0);
-    
+
     useEffect(() => {
         // This will trigger the scroll animation to the first member on page load
         const element = document.getElementById(teamMembers[0].name.replace(/,|\s+/g, "-"));
@@ -65,6 +65,39 @@ function Profilepage() {
         }
     }, []);
 
+    const sectionRefs = useRef([]);
+
+    useEffect(() => {
+        const observerOptions = {
+            root: null,
+            rootMargin: "0px",
+            threshold: 0.6, // Adjust this to trigger earlier/later
+        };
+
+        const observerCallback = (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const index = sectionRefs.current.findIndex(ref => ref === entry.target);
+                    if (index !== -1) {
+                        setActiveIndex(index);
+                    }
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+        sectionRefs.current.forEach((ref) => {
+            if (ref) observer.observe(ref);
+        });
+
+        return () => {
+            sectionRefs.current.forEach((ref) => {
+                if (ref) observer.unobserve(ref);
+            });
+        };
+    });
+
     const teamMembers = [
         {
             name: "Dhaniel, Lofamia",
@@ -73,6 +106,12 @@ function Profilepage() {
             birthdate: "Jan 1, 2000",
             phone: "0912-345-6789",
             email: "dhaniel@example.com",
+            socialIcons: [
+                { Icon: FaFacebook, color: "#1877F2" },   // Facebook Blue
+                { Icon: FaInstagram, color: "#E1306C" },  // Instagram Pink
+                { Icon: FaEnvelope, color: "#D44638" },   // Gmail Red
+                { Icon: FaGithub, color: "#555555" },     // GitHub Gray
+            ],
             workProcess: [
                 { icon: FaUserFriends, label: "Empathize", color: "text-rose-400" },
                 { icon: FaBullseye, label: "Define", color: "text-orange-400" },
@@ -109,6 +148,12 @@ function Profilepage() {
             birthdate: "Jan 2, 2000",
             phone: "0912-345-6789",
             email: "janharvey@example.com",
+            socialIcons: [
+                { Icon: FaFacebook, color: "#1877F2" },   // Facebook Blue
+                { Icon: FaInstagram, color: "#E1306C" },  // Instagram Pink
+                { Icon: FaEnvelope, color: "#D44638" },   // Gmail Red
+                { Icon: FaGithub, color: "#555555" },     // GitHub Gray
+            ],
             workProcess: [
                 { icon: FaUserFriends, label: "Empathize", color: "text-rose-400" },
                 { icon: FaBullseye, label: "Define", color: "text-orange-400" },
@@ -148,6 +193,12 @@ function Profilepage() {
             birthdate: "Jan 3, 2000",
             phone: "0912-345-6789",
             email: "johnpatrick@example.com",
+            socialIcons: [
+                { Icon: FaFacebook, color: "#1877F2" },   // Facebook Blue
+                { Icon: FaInstagram, color: "#E1306C" },  // Instagram Pink
+                { Icon: FaEnvelope, color: "#D44638" },   // Gmail Red
+                { Icon: FaGithub, color: "#555555" },     // GitHub Gray
+            ],
             workProcess: [
                 { icon: FaUserFriends, label: "Empathize", color: "text-rose-400" },
                 { icon: FaBullseye, label: "Define", color: "text-orange-400" },
@@ -187,6 +238,12 @@ function Profilepage() {
             birthdate: "Jan 1, 2000",
             phone: "0912-345-6789",
             email: "carlosjr@example.com",
+            socialIcons: [
+                { Icon: FaFacebook, color: "#1877F2" },   // Facebook Blue
+                { Icon: FaInstagram, color: "#E1306C" },  // Instagram Pink
+                { Icon: FaEnvelope, color: "#D44638" },   // Gmail Red
+                { Icon: FaGithub, color: "#555555" },     // GitHub Gray
+            ],
             workProcess: [
                 { icon: FaUserFriends, label: "Empathize", color: "text-rose-400" },
                 { icon: FaBullseye, label: "Define", color: "text-orange-400" },
@@ -225,6 +282,12 @@ function Profilepage() {
             birthdate: "Jan 1, 2000",
             phone: "0912-345-6789",
             email: "rodney@example.com",
+            socialIcons: [
+                { Icon: FaFacebook, color: "#1877F2" },   // Facebook Blue
+                { Icon: FaInstagram, color: "#E1306C" },  // Instagram Pink
+                { Icon: FaEnvelope, color: "#D44638" },   // Gmail Red
+                { Icon: FaGithub, color: "#555555" },     // GitHub Gray
+            ],
             workProcess: [
                 { icon: FaUserFriends, label: "Empathize", color: "text-rose-400" },
                 { icon: FaBullseye, label: "Define", color: "text-orange-400" },
@@ -257,6 +320,7 @@ function Profilepage() {
             ]
 
         },
+
     ];
 
 
@@ -266,13 +330,19 @@ function Profilepage() {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-8 relative">
 
                 {/* Left Sidebar */}
-                <div className="w-full px-3 sm:px-4 lg:px-6 p-6 bg-gray-900 text-white font-semibold bg-[linear-gradient(to_bottom,_#0D0D0D,_#1E1E1E)] flex flex-col items-center bg-clip-text overflow-">
+                <motion.div
+                    initial={{ y: -300, opacity: 0 }}
+                    animate={{ y: 0, opacity: 5 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    className="w-full px-3 sm:px-4 lg:px-6 p-6 bg-gray-900 text-white font-semibold bg-[linear-gradient(to_bottom,_#0D0D0D,_#1E1E1E)] flex flex-col items-center bg-clip-text"
+                >
                     {/* Logo and Brand */}
                     <div className="flex items-center gap-2 md:gap-3 mb-8 md:mb-16">
+
                         <div className="w-8 h-8 md:w-12 md:h-12 rounded-full border-2 border-white flex items-center justify-center">
-                            <span className="text-white text-sm md:text-xl">&lt;/&gt;</span>
+                            <span className="text-white text-md md:text-xl">&lt;/&gt;</span>
                         </div>
-                        <span className="text-xl md:text-3xl font-bold">DevNexus</span>
+                        <span className="text-2xl md:text-3xl font-bold">DevNexus</span>
                     </div>
 
                     {/* About Us Header */}
@@ -298,7 +368,7 @@ function Profilepage() {
                                                         const start = window.scrollY;
                                                         const end = target.getBoundingClientRect().top + window.scrollY;
                                                         const distance = end - start;
-                                                        const duration = 500; // duration in ms (adjust for speed)
+                                                        const duration = 1000; // duration in ms (adjust for speed)
                                                         let startTime;
 
                                                         const scroll = (currentTime) => {
@@ -353,8 +423,7 @@ function Profilepage() {
                             </ul>
                         </div>
                     </div>
-
-                </div>
+                </motion.div>
 
                 {/* Right Content */}
                 <div className="lg:col-span-2 space-y-8 relative">
@@ -363,7 +432,9 @@ function Profilepage() {
                         const memberId = member.name.replace(/,|\s+/g, "-");
 
                         return (
-                            <div key={index} id={memberId} className="mb-16 md:mb-24 relative">
+                            <div key={index} id={memberId}
+                                ref={(el) => sectionRefs.current[index] = el}
+                                className="mb-16 md:mb-24 relative">
                                 {/* Right Gradient Line for this section */}
                                 <div
                                     className="absolute right-px top-30 w-1 rounded-full hidden md:block"
@@ -383,23 +454,51 @@ function Profilepage() {
                                 ></div>
 
                                 {/* Introduction Heading */}
-                                <h2 className="text-2xl md:text-4xl font-bold mb-4 md:mb-8 flex items-center gap-2 -translate-x-6 bg-clip-text pt-6 md:pt-10 relative z-10">
+                                <motion.h2
+                                    initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+                                    whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                                    transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
+                                    className="text-2xl md:text-4xl font-bold mb-4 md:mb-8 flex items-center gap-2 -translate-x-6 bg-clip-text pt-6 md:pt-10 relative z-10">
                                     <GradientBullet />
                                     Introduction
-                                </h2>
+                                </motion.h2>
                                 <div className="flex flex-col lg:flex-row gap-4 md:gap-6 items-center translate-y-6 md:translate-y-10 bg-clip-text">
-                                    <img src={member.profileImg} alt={member.name} className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 object-cover" />
+                                    <motion.img
+                                        initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+                                        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                                        transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
+                                        src={member.profileImg} alt={member.name} className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 object-cover" />
                                     <div className="text-center lg:text-left translate-y-0 bg-clip-text">
-                                        <h3 className="text-3xl md:text-5xl font-bold mb-1 translate-y-2">{member.name.replace(",", "")}</h3>
-                                        <p className="text-lg md:text-xl text-gray-500 mb-2 translate-y-4 md:translate-y-10">Full Stack Developer</p>
-                                        <p className="text-sm md:text-base translate-y-6 md:translate-y-15 px-2 md:px-0">
+                                        <motion.h3
+                                            initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+                                            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                                            transition={{ duration: 0.5, ease: "easeOut", delay: 0.3 }}
+                                            className="text-3xl md:text-5xl font-bold mb-1 translate-y-2">{member.name.replace(",", "")}</motion.h3>
+                                        <motion.p
+                                            initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+                                            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                                            transition={{ duration: 0.5, ease: "easeOut", delay: 0.4 }}
+                                            className="text-lg md:text-xl text-gray-500 mb-2 translate-y-4 md:translate-y-10">Full Stack Developer</motion.p>
+                                        <motion.p
+                                            initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+                                            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                                            transition={{ duration: 0.5, ease: "easeOut", delay: 0.5 }}
+                                            className="text-sm md:text-base translate-y-6 md:translate-y-15 px-2 md:px-0">
                                             I am a Full Stack Developer student with strong eagerness to learn and grow in the world of coding. I like to solve complex and logical problems, building dynamic web applications and continuously expanding my knowledge of front-end and back-end technologies.
-                                        </p>
+                                        </motion.p>
                                         <div className="flex gap-3 md:gap-4 justify-center lg:justify-start text-3xl md:text-5xl translate-y-8 md:translate-y-20 mt-4 ">
-                                            <FaFacebook className="text-[#1877F2] transition-transform duration-200 hover:scale-110 text-4xl" />      {/* Facebook Blue */}
-                                            <FaInstagram className="text-[#E1306C] transition-transform duration-200 hover:scale-110 text-4xl" />     {/* Instagram Pinkish */}
-                                            <FaEnvelope className="text-[#D44638] transition-transform duration-200 hover:scale-110 text-4xl" />      {/* Gmail Red (common envelope color) */}
-                                            <FaGithub className="text-[#555555] transition-transform duration-200 hover:scale-110 text-4xl" />           {/* GitHub Gray/Black */}
+                                            {member.socialIcons.map((item, idx) => (
+                                                <motion.div
+                                                    key={idx}
+                                                    initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+                                                    whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                                                    viewport={{ once: false, amount: 0.7 }} // `once: false` allows re-animation on re-entry
+                                                    transition={{ delay: idx * 0.2, duration: 0.5, ease: "easeOut" }}
+                                                    className="transition-transform duration-200 hover:scale-110"
+                                                >
+                                                    <item.Icon className="text-4xl" style={{ color: item.color }} />
+                                                </motion.div>
+                                            ))}
                                         </div>
 
                                     </div>
@@ -408,8 +507,16 @@ function Profilepage() {
                                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-15 translate-y-12 sm:translate-y-16 md:translate-y-25 translate-x-0 md:translate-x-10 bg-clip-text mt-8 ">
                                     {/* Personal Details */}
                                     <div className="mt-2 mb-8">
-                                        <h4 className="text-lg md:text-xl mb-3 md:mb-4 text-white">Personal Details</h4>
-                                        <div className="grid grid-cols-2 text-sm md:text-base text-white mt-2 md:mt-4 translate-y-2 md:translate-y-5">
+                                        <motion.h4
+                                            initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+                                            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                                            transition={{ duration: 0.5, ease: "easeOut", delay: 0.6 }}
+                                            className="text-lg md:text-xl mb-3 md:mb-4 text-white">Personal Details</motion.h4>
+                                        <motion.div
+                                            initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+                                            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                                            transition={{ duration: 0.5, ease: "easeOut", delay: 0.7 }}
+                                            className="grid grid-cols-2 text-sm md:text-base text-white mt-2 md:mt-4 translate-y-2 md:translate-y-5">
                                             <p className="font-semibold">Age:</p>
                                             <p>{member.age}</p>
                                             <p className="font-semibold">Birthdate:</p>
@@ -418,20 +525,32 @@ function Profilepage() {
                                             <p>{member.phone}</p>
                                             <p className="font-semibold">Email:</p>
                                             <p className="break-all md:break-normal">{member.email}</p>
-                                        </div>
+                                        </motion.div>
                                     </div>
 
                                     {/* Work Process */}
                                     <div className="flex flex-col items-center text-center mb-8">
-                                        <h4 className="text-xl mb-4">Work Process</h4>
+                                        <motion.h4
+                                            initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+                                            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                                            transition={{ duration: 0.5, ease: "easeOut", delay: 0.6 }}
+                                            className="text-xl mb-4">Work Process</motion.h4>
                                         <div className="grid grid-cols-3 gap-y-3 gap-x-3 text-1xl place-items-center">
                                             {member.workProcess.map((item, idx) => {
                                                 const Icon = item.icon;
+                                                const baseDelay = member.socialIcons.length * 0.2;
                                                 return (
-                                                    <div key={idx} className="flex flex-col items-center transition-transform duration-200 hover:scale-110">
-                                                        <Icon className={`${item.color} text-3xl`} />
-                                                        <span className="text-xs text-white mt-2 text-center">{item.label}</span>
-                                                    </div>
+                                                    <motion.div
+                                                        key={idx}
+                                                        initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
+                                                        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                                                        viewport={{ once: false, amount: 0.5 }}
+                                                        transition={{ delay: baseDelay + idx * 0.1, duration: 0.5, ease: "easeOut" }}
+                                                        className="flex flex-col items-center transition-transform duration-200 hover:scale-110"
+                                                    >
+                                                        <Icon className={`${item.color} text-2xl md:text-4xl`} />
+                                                        <span className="text-[10px] md:text-xs text-white mt-1">{item.label}</span>
+                                                    </motion.div>
                                                 );
                                             })}
                                         </div>
@@ -441,15 +560,27 @@ function Profilepage() {
 
                                     {/* Interests */}
                                     <div className="flex flex-col items-center text-center mb-8">
-                                        <h4 className="text-lg md:text-xl mb-3 md:mb-4">Interests</h4>
+                                        <motion.h4
+                                            initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+                                            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                                            transition={{ duration: 0.5, ease: "easeOut", delay: 0.6 }}
+                                            className="text-lg md:text-xl mb-3 md:mb-4">Interests</motion.h4>
                                         <div className="grid grid-cols-4 gap-1 text-xl md:text-2xl translate-y-2 md:translate-y-5 place-items-center">
                                             {member.interests.map((item, idx) => {
                                                 const Icon = item.icon;
+                                                const baseDelay = member.socialIcons.length * 0.4;
                                                 return (
-                                                    <div key={idx} className="flex flex-col items-center transition-transform duration-200 hover:scale-110">
-                                                        <Icon className={`${item.color} text-xl md:text-2xl`} />
+                                                    <motion.div
+                                                        key={idx}
+                                                        initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
+                                                        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                                                        viewport={{ once: false, amount: 0.5 }}
+                                                        transition={{ delay: baseDelay + idx * 0.1, duration: 0.5, ease: "easeOut" }}
+                                                        className="flex flex-col items-center transition-transform duration-200 hover:scale-110"
+                                                    >
+                                                        <Icon className={`${item.color} text-2xl md:text-4xl`} />
                                                         <span className="text-[10px] md:text-xs text-white mt-1">{item.label}</span>
-                                                    </div>
+                                                    </motion.div>
                                                 );
                                             })}
                                         </div>
@@ -460,19 +591,35 @@ function Profilepage() {
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 translate-y-12 md:translate-y-20 bg-clip-text text-center pt-6 md:pt-10">
                                     {/* Skills */}
                                     <div>
-                                        <h4 className="text-xl md:text-2xl font-bold mb-2 flex items-center justify-center gap-2">
+                                        <motion.h4
+                                            initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+                                            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                                            transition={{ duration: 0.5, ease: "easeOut", delay: 0.7 }}
+                                            className="text-xl md:text-2xl font-bold mb-2 flex items-center justify-center gap-2">
                                             <GradientBullet />
                                             SKILLS
-                                        </h4>
-                                        <p className="mb-3 md:mb-4 text-gray-300 items-center text-center text-sm md:text-base px-2">Experienced in designing intuitive and user-friendly interfaces that enhance digital experiences and support seamless interaction.</p>
+                                        </motion.h4>
+                                        <motion.p
+                                            initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+                                            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                                            transition={{ duration: 0.5, ease: "easeOut", delay: 0.8 }}
+                                            className="mb-3 md:mb-4 text-gray-300 items-center text-center text-sm md:text-base px-2">Experienced in designing intuitive and user-friendly interfaces that enhance digital experiences and support seamless interaction.</motion.p>
                                         <div className="flex flex-wrap gap-3 md:gap-6 justify-center items-center text-2xl md:text-3xl mt-2 md:mt-4">
                                             {member.skills.map((item, idx) => {
                                                 const Icon = item.icon;
+                                                const baseDelay = member.socialIcons.length * 0.5;
                                                 return (
-                                                    <div key={idx} className="flex flex-col items-center transition-transform duration-200 hover:scale-110">
+                                                    <motion.div
+                                                        key={idx}
+                                                        initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
+                                                        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                                                        viewport={{ once: false, amount: 0.5 }}
+                                                        transition={{ delay: baseDelay + idx * 0.1, duration: 0.2, ease: "easeOut" }}
+                                                        className="flex flex-col items-center transition-transform duration-200 hover:scale-110"
+                                                    >
                                                         <Icon className={`${item.color} text-2xl md:text-4xl`} />
                                                         <span className="text-[10px] md:text-xs text-white mt-1">{item.label}</span>
-                                                    </div>
+                                                    </motion.div>
                                                 );
                                             })}
                                         </div>
@@ -480,20 +627,35 @@ function Profilepage() {
 
                                     {/* UI/UX */}
                                     <div>
-                                        <h4 className="text-xl md:text-2xl font-bold mb-2 flex items-center justify-center gap-2">
+                                        <motion.h4
+                                            initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+                                            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                                            transition={{ duration: 0.5, ease: "easeOut", delay: 0.5 }}
+                                            className="text-xl md:text-2xl font-bold mb-2 flex items-center justify-center gap-2">
                                             <GradientBullet />
                                             UI/UX Design
-                                        </h4>
-                                        <p className="mb-3 md:mb-4 text-gray-300 text-center px-2 text-sm md:text-base">Designing intuitive, user-friendly interfaces to improve digital experiences and create seamless interactions.</p>
+                                        </motion.h4>
+                                        <motion.p
+                                            initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+                                            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                                            transition={{ duration: 0.5, ease: "easeOut", delay: 0.8 }} className="mb-3 md:mb-4 text-gray-300 text-center px-2 text-sm md:text-base">Designing intuitive, user-friendly interfaces to improve digital experiences and create seamless interactions.</motion.p>
                                         <div className="flex gap-4 md:gap-6 justify-center text-2xl md:text-3xl">
                                             <div className="flex gap-4 md:gap-6 justify-center text-2xl md:text-3xl">
                                                 {member.uiUxDesign.map((item, idx) => {
                                                     const Icon = item.icon;
+                                                    const baseDelay = member.socialIcons.length * 0.6;
                                                     return (
-                                                        <div key={idx} className="flex flex-col items-center transition-transform duration-200 hover:scale-110">
+                                                        <motion.div
+                                                            key={idx}
+                                                            initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
+                                                            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                                                            viewport={{ once: false, amount: 0.5 }}
+                                                            transition={{ delay: baseDelay + idx * 0.1, duration: 0.5, ease: "easeOut" }}
+                                                            className="flex flex-col items-center transition-transform duration-200 hover:scale-110"
+                                                        >
                                                             <Icon className={`${item.color} text-2xl md:text-4xl`} />
                                                             <span className="text-[10px] md:text-xs text-white mt-1">{item.label}</span>
-                                                        </div>
+                                                        </motion.div>
                                                     );
                                                 })}
                                             </div>
@@ -506,7 +668,7 @@ function Profilepage() {
 
                 </div>
             </div>
-        </div>
+        </div >
     );
 }
 
