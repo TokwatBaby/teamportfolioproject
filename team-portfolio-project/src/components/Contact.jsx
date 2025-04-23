@@ -12,7 +12,7 @@ function ContactPage() {
 
         <main className="relative flex flex-col justify-center
                         2xl:p-20
-                        bg-[linear-gradient(to_bottom,_#0D0D0D,_#1E1E1E)]">
+                        bg-[linear-gradient(to_top,_#0D0D0D,_#1E1E1E)]">
 
             <motion.div
                 initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}

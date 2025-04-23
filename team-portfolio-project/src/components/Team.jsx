@@ -12,7 +12,7 @@ function Team() {
 
         <main className="relative flex flex-col justify-center
                         2xl:p-20
-                        bg-[linear-gradient(to_bottom,_#0D0D0D,_#1E1E1E)]">
+                        bg-[linear-gradient(to_top,_#0D0D0D,_#1E1E1E)]">
             <div className="relative w-11/12 md:w-3/4 mx-auto border-t-4 text-gray-600 min-h-[30rem] flex items-start justify-center pt-20 bg-clip-text">
                 <motion.div
                     initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
